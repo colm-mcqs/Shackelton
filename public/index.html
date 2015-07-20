@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="breweryApp" >
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Shackelton: Dingle Brewing Company Management</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo_DBC_irish.jpg"/>
+    <base href="/">
+    <!-- CSS -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="kegsController">
+<img src="images/banner.jpg"/>
+<ng-view></ng-view>
+
+<footer>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js" type="text/javascript"></script>
+    <script src="bower_components/angular-smart-table/dist/smart-table.min.js"></script>
+    <script src="js/app.js"></script>
+
+
+    <script src="js/directives/kegs.js"></script>
+    <script src="js/directives/lateKegs.js"></script>
+    <script src="js/directives/kegForm.js"></script>
+    <script src="js/services/kegs.js"></script>
+</footer>
+</body>
+
+
+</html>

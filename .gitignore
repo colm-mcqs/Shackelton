@@ -1,0 +1,70 @@
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# =========================
+# Operating System Files
+# =========================
+
+# OSX
+# =========================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# ignore mongoDB testing database
+data
+
+# Ignore native extensions in the node_modules folder (things changed by npm rebuild)
+node_modules
+node_modules/**/*.node
+node_modules/**/*.o
+node_modules/**/*.a
+node_modules/**/*.mk
+node_modules/**/*.gypi
+node_modules/**/*.target
+node_modules/**/.deps/
+node_modules/**/build/Makefile
+node_modules/**/**/build/Makefile
+
+# Ignore native extensions in the public/bower_components folder
+public/bower_components
+public/bower_components/**/*.node
+public/bower_components/**/*.o
+public/bower_components/**/*.a
+public/bower_components/**/*.mk
+public/bower_components/**/*.gypi
+public/bower_components/**/*.target
+public/bower_components/**/.deps/
+public/bower_components/**/build/Makefile
+public/bower_components/**/**/build/Makefile

@@ -1,0 +1,12 @@
+{
+  "name": "Shackleton: brewery app",
+  "version": "0.0.1",
+  "dependencies": {
+    "bootstrap": "latest",
+    "font-awesome": "latest",
+    "angular": "latest",
+    "angular-route": "latest",
+    "ui.bootstrap": "~0.13.0",
+    "angular-smart-table": "~2.1.0"
+  }
+}
