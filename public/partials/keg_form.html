@@ -20,9 +20,9 @@
                     Destination:  <input type="text"
                                          class="form-control"
                                          name="destination"
-                                         ng-model="keg.dest"
+                                         ng-model="query"
                                          placeholder="Type to begin searching..."
-                                         uib-typeahead="dest for dest in searchDestinations($viewValue)"
+                                         uib-typeahead="item for item in searchDestinations($viewValue)"
                                          required>
                 </div>
                 <p class="help-block" ng-if="kegForm.destination.$error.required">The Keg's Destination is required</p>
