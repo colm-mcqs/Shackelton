@@ -7,11 +7,11 @@ app.config(function($locationProvider, $routeProvider){
     //$locationProvider.html5mode(true);
     $routeProvider
         .when('/', {
-            templateUrl: "partials/kegs.html"
+            template: `<kegs-directive></kegs-directive>`
         })
 })
     .controller('kegsController', ['$scope', function($scope){
-        $scope.kegs = [
-            1,2,3,4
-        ]
+        $scope.showKegs = false;
+        $scope.displayedKegs = [];
+        console.log('Keg 2: ', $scope.showKegs);
     }]);

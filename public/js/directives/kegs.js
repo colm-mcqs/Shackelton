@@ -1,6 +1,12 @@
 var app = angular.module('breweryApp');
-app.directive('kegsDirective', function(){
+app.directive('kegsDirective', [function(){
     return {
-        templateURL: '/partials/kegs.html'
+        templateUrl: 'partials/kegs.html',
+        restrict: 'E',
+        scope: {},
+        replace: true,
+        link: function (scope) {
+            console.log('asfd')
+        }
     }
-});
+}]);
