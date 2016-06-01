@@ -1,5 +1,5 @@
 var app = angular.module('breweryApp');
-app.directive('lateKegsDirective', function(){
+app.directive('lateKegsDirective', ['kegsService', function(kegsService){
     return {
         restrict: 'E',
         templateUrl: 'partials/late_kegs.html',
@@ -8,30 +8,23 @@ app.directive('lateKegsDirective', function(){
 
         },
         link: function (scope) {
-            scope.showKegs = false;
-            scope.displayedKegs = [
-                {
-                    kegNo: 1,
-                    size: 50,
-                    dest: 'Tralee',
-                    dateEntered:  new Date("01/06/16 23:00:00 UTC"),
-                    daysLate: 3
-                },
-                {
-                    kegNo: 1,
-                    size: 50,
-                    dest: 'Tralee',
-                    dateEntered:  new Date("01/03/16 23:00:00 UTC"),
-                    daysLate: 60
-                },
-                {
-                    kegNo: 1,
-                    size: 50,
-                    dest: 'Dingle',
-                    dateEntered:  new Date("03/05/16 23:00:00 UTC"),
-                    daysLate: 33
-                }
-            ];
+
+        },
+        controller: function ($scope) {
+            $scope.showKegs = false;
+            $scope.displayedKegs =null;
+
+            kegsService.getLateKegs()
+                .then(function (data) {
+                    $scope.lateKegs = data;
+            });
+
+            $scope.getLateKegs = function () {
+                kegsService.getLateKegs()
+                    .then(function (data) {
+                        scope.lateKegs = data;
+                    })
+            }
         }
     }
-});
+}]);

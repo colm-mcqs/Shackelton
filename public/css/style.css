@@ -6,7 +6,7 @@
 }
 #lateKegWrapper
 {
-    width: 40%;
+    width: 60%;
     position: relative;
     height:800px;
     background-color: #ffffff;
@@ -15,7 +15,7 @@
 }
 #kegFormWrapper
 {
-    height: 800px;
+    width: 40%;
     padding-left: 5px;
     display: block;
     overflow-y: auto;

@@ -1,7 +1,7 @@
 /**
  * Created by Colm on 22/05/2015.
  */
-var app = angular.module('breweryApp', ['ngRoute', 'ui.bootstrap']);
+var app = angular.module('breweryApp', ['ngRoute', 'ui.bootstrap', 'smart-table','ui.bootstrap.showErrors']);
 
 app.config(function($locationProvider, $routeProvider){
     //$locationProvider.html5mode(true);
@@ -11,11 +11,11 @@ app.config(function($locationProvider, $routeProvider){
         })
 })
     .controller('kegsController', ['$scope', function($scope){
-        $scope.showKegs = false;
-        $scope.displayedKegs = [];
     }])
     .filter('addVolume', function () {
         return function (input) {
+            if(!input) return null;
+
             return `${input.toString()}L`
         }
     });
