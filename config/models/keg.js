@@ -4,11 +4,12 @@
 var mongoose = require('mongoose');
 
 var schema = mongoose.Schema({
-    name: String
-    , img: String
-    , price: Number
+    kegNo: Number
+    , size: Number
+    , dest: String
+    , dateEntered: Date
 });
 
-var Model = mongoose.model('Product', schema);
+var Model = mongoose.model('Keg', schema);
 
 module.exports = Model;
