@@ -1,12 +1,12 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <a href="#" ng-click="showKegs = !showKegs">
+            <button type="button" class="btn btn-primary" ng-model="showKegs" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
                 Late Kegs
-            </a>
+            </button>
         </h4>
     </div>
-    <div collapse="showKegs">
+    <div uib-collapse="!showKegs">
         <div class="panel-body">
             <table st-table="displayedKegs" st-safe-src="lateKegs" class="table table-striped">
                 <thead>
@@ -23,7 +23,7 @@
                     <td>{{keg.kegNo}}</td>
                     <td>{{keg.size | addVolume}}</td>
                     <td>{{keg.dest}}</td>
-                    <td>{{keg.dateEntered | date}}</td>
+                    <td>{{keg.dateEntered | date : 'mediumDate': 'GMT'}}</td>
                     <td>{{keg.daysLate}}</td>
                 </tr>
                 </tbody>
