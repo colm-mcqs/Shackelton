@@ -11,6 +11,9 @@ app.directive('kegFormDirective', ['kegsService', '$document', function(kegsServ
             scope.keg = {};
             scope.dest = {
             };
+
+            scope.destinations = [];
+
             scope.showKegs = false;
             scope.opened = false;
             scope.format = 'dd-MMMM-yyyy';
@@ -23,7 +26,7 @@ app.directive('kegFormDirective', ['kegsService', '$document', function(kegsServ
             scope.dateOptions = {
                 formatYear: 'yy',
                 maxDate: new Date(2020, 5, 22),
-                minDate: new Date(),
+                minDate: new Date(2015, 1, 1),
                 startingDay: 1
             };
 
@@ -33,13 +36,19 @@ app.directive('kegFormDirective', ['kegsService', '$document', function(kegsServ
                         console.log(data);
                         scope.kegs = data;
                     });
-            }
+            };
+
+            scope.searchDestinations = function (dest) {
+                kegsService.getDestinations(dest)
+                    .then(function (data) {
+                        return data.map(item=>{return item.name;});
+                    })
+            };
 
             scope.addDestination = function(dest){
                 kegsService.addDestination(dest)
                     .then(function (data) {
                         console.log(data);
-                        $document.getElementById("destForm").reset();
                     })
             }
         }

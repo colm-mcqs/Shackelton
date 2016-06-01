@@ -11,6 +11,18 @@ app.factory('kegsService', ['$http', function($http){
             return $http.post('/destination/insert', dest).then(function (response) {
                 return response.data;
             })
+        },
+
+        getDestinations: function(dest){
+            return $http.get(`/destinations/${dest}`).then(function(response){
+                return response.data;
+            })
+        },
+
+        getLateKegs: function () {
+            return $http.get('/kegs/late').then(function (response) {
+                return response.data;
+            })
         }
     };
     return service;

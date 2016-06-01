@@ -1,7 +1,7 @@
 <div class="panel panel-default">
     <div class="panel-heading">
         <h4 class="panel-title">
-            <button type="button" class="btn btn-primary" ng-model="showKegs" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0">
+            <button type="button" class="btn btn-primary" ng-model="showKegs" uib-btn-checkbox btn-checkbox-true="1" btn-checkbox-false="0" click="getLateKegs()">
                 Late Kegs
             </button>
         </h4>
@@ -15,7 +15,7 @@
                     <th st-sort="size">Keg Size</th>
                     <th st-sort="dest">Destination</th>
                     <th st-sort="dateEntered">Date Sent</th>
-                    <th st-sort="daysLate">Days Late</th>
+                    <th st-sort="daysLate" st-sort-default="reverse">Days Late</th>
                 </tr>
                 </thead>
                 <tbody>
