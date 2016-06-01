@@ -65,3 +65,4 @@ if(env=='development'){
 }
 
 App.require('config/database')(process.env.DATABASE_URL || 'mongodb://localhost/test')
+App.app.use(require(App.appPath('./routes')));
