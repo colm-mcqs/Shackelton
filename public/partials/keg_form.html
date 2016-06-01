@@ -6,12 +6,11 @@
                 <div class="form-group" show-errors='{ showSuccess: true }'>
                     Keg No: <input type="number" class="form-control" name="number" ng-model="keg.kegNo" required>
                 </div>
-                <p class="help-block" ng-if="kegForm.number.$error.required">The Keg Number is required</p>
                 <div class="form-group">
                     <br/>
                     Keg Size:
-                    <input type="radio" ng-model="keg.size" value="50" />50L
-                    <input type="radio" ng-model="keg.size" value="30" />30L<br/>
+                    <input type="radio" ng-model="keg.size" name="volume" value="50" required/>50L
+                    <input type="radio" ng-model="keg.size" name="volume" value="30" required/>30L<br/>
                 </div>
             </div>
 
@@ -25,7 +24,6 @@
                                          uib-typeahead="item for item in searchDestinations($viewValue)"
                                          required>
                 </div>
-                <p class="help-block" ng-if="kegForm.destination.$error.required">The Keg's Destination is required</p>
                 <br/>
                 <div class="form-group" show-errors='{ showSuccess: true }'>
                     Date Sent: <p class="input-group">
@@ -34,7 +32,6 @@
                             <button type="button" class="btn btn-default" ng-click="open()"><i class="glyphicon glyphicon-calendar"></i></button>
                           </span>
                 </p>
-                    <p class="help-block" ng-if="kegForm.date.$error.required">The Date Sent is required</p>
 
 
                 </div>
@@ -51,7 +48,6 @@
                     <button class="btn btn-primary" ng-click="addDestination(dest)">Add</button>
                 </span>
             </div>
-            <p class="help-block" ng-if="destForm.name.$error.required">The Destination Name is required</p>
         </form>
     </div>
 </div>

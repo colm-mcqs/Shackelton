@@ -1,7 +1,7 @@
 /**
  * Created by Colm on 22/05/2015.
  */
-var app = angular.module('breweryApp', ['ngRoute', 'ui.bootstrap', 'smart-table']);
+var app = angular.module('breweryApp', ['ngRoute', 'ui.bootstrap', 'smart-table','ui.bootstrap.showErrors']);
 
 app.config(function($locationProvider, $routeProvider){
     //$locationProvider.html5mode(true);
