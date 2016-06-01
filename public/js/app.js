@@ -13,4 +13,9 @@ app.config(function($locationProvider, $routeProvider){
     .controller('kegsController', ['$scope', function($scope){
         $scope.showKegs = false;
         $scope.displayedKegs = [];
-    }]);
+    }])
+    .filter('addVolume', function () {
+        return function (input) {
+            return `${input.toString()}L`
+        }
+    });
