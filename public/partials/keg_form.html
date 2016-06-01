@@ -36,13 +36,16 @@
         </div>
         <button class="btn btn-primary" ng-click="addKeg(keg)">Add Keg</button>
     </form>
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form name="destForm">
             <h3> Add New Destination</h3>
-            <div class="form-group">
-                Destination Name: <input type="text" class="form-control" name="name" ng-model="dest.name" required>
+            <div class="input-group" show-errors='{ showSuccess: true }'>
+                <input type="text" class="form-control" name="name" ng-model="dest.name" placeholder="Destination Name" required>
+                <span class="input-group-btn">
+                    <button class="btn btn-primary" ng-click="addDestination(dest)">Add</button>
+                </span>
             </div>
-            <button class="btn btn-primary" ng-click="addDestination(dest)">Add new Destination</button>
+            <p class="help-block" ng-if="destForm.name.$error.required">The Destination Name is required</p>
         </form>
     </div>
 </div>

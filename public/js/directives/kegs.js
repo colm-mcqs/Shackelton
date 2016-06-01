@@ -6,7 +6,6 @@ app.directive('kegsDirective', [function(){
         scope: {},
         replace: true,
         link: function (scope) {
-            console.log('asfd')
         }
     }
 }]);

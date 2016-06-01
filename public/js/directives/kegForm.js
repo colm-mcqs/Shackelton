@@ -1,5 +1,5 @@
 var app = angular.module('breweryApp');
-app.directive('kegFormDirective', ['kegsService', function(kegsService){
+app.directive('kegFormDirective', ['kegsService', '$document', function(kegsService, $document){
     return {
         restrict: 'E',
         templateUrl: 'partials/keg_form.html',
@@ -9,7 +9,8 @@ app.directive('kegFormDirective', ['kegsService', function(kegsService){
         },
         link: function (scope, element, attrs) {
             scope.keg = {};
-            scope.dest = {};
+            scope.dest = {
+            };
             scope.showKegs = false;
             scope.opened = false;
             scope.format = 'dd-MMMM-yyyy';
@@ -38,6 +39,7 @@ app.directive('kegFormDirective', ['kegsService', function(kegsService){
                 kegsService.addDestination(dest)
                     .then(function (data) {
                         console.log(data);
+                        $document.getElementById("destForm").reset();
                     })
             }
         }
