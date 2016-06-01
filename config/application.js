@@ -64,5 +64,5 @@ if(env=='development'){
     App.app.use(errorhandler());
 }
 
-App.require('config/database')(process.env.DATABASE_URL || 'mongodb://localhost/test')
+App.require('config/database')(process.env.DATABASE_URL || 'mongodb://localhost/brewery')
 App.app.use(require(App.appPath('./routes')));
