@@ -1,7 +1,7 @@
 /**
  * Created by Colm on 22/05/2015.
  */
-var app = angular.module('breweryApp', ['ngRoute']);
+var app = angular.module('breweryApp', ['ngRoute', 'ui.bootstrap']);
 
 app.config(function($locationProvider, $routeProvider){
     //$locationProvider.html5mode(true);
@@ -13,5 +13,4 @@ app.config(function($locationProvider, $routeProvider){
     .controller('kegsController', ['$scope', function($scope){
         $scope.showKegs = false;
         $scope.displayedKegs = [];
-        console.log('Keg 2: ', $scope.showKegs);
     }]);
