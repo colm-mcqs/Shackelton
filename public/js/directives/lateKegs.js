@@ -2,7 +2,7 @@ var app = angular.module('breweryApp');
 app.directive('lateKegsDirective', ['kegsService', function(kegsService){
     return {
         restrict: 'E',
-        templateUrl: 'partials/late_kegs.html',
+        templateUrl: 'public/partials/late_kegs.html',
         replace: true,
         scope: {
 

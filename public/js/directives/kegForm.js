@@ -2,7 +2,7 @@ var app = angular.module('breweryApp');
 app.directive('kegFormDirective', ['kegsService', function(kegsService){
     return {
         restrict: 'E',
-        templateUrl: 'partials/keg_form.html',
+        templateUrl: 'public/partials/keg_form.html',
         replace: true,
         scope:{
 
@@ -33,7 +33,10 @@ app.directive('kegFormDirective', ['kegsService', function(kegsService){
             };
 
             $scope.searchDestinations = function (dest) {
-                return kegsService.getDestinations(dest);
+               kegsService.getDestinations(dest)
+                   .then(function(match){
+                       return match;
+                   })
             };
 
             $scope.addDestination = function(dest){
